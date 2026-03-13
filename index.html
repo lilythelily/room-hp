@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Room homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 10px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overlay hide"></div>
+    <main>
+      <header>
+        <nav class="desktop-nav">
+          <img
+            src="./images/icon-hamburger.svg"
+            alt="hamburger-menu"
+            class="hamburger-icon"
+          />
+          <img src="./images/logo.svg" alt="logo" class="logo" />
+          <ul class="desktop-ul">
+            <li>
+              <a href="#">Home</a>
+              <div class="underline"></div>
+            </li>
+            <li>
+              <a href="#">Shop</a>
+              <div class="underline"></div>
+            </li>
+            <li>
+              <a href="#">About</a>
+              <div class="underline"></div>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+              <div class="underline"></div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- === mobile hamburger menu === -->
+
+      <nav class="mobile-nav hide">
+        <img src="./images/icon-close.svg" alt="close" class="close-btn" />
+        <ul class="mobile-ul">
+          <li>
+            <a href="#" class="mobile-a">Home</a>
+            <div class="underline-mobile"></div>
+          </li>
+          <li>
+            <a href="#" class="mobile-a">Shop</a>
+            <div class="underline-mobile"></div>
+          </li>
+          <li>
+            <a href="#" class="mobile-a">About</a>
+            <div class="underline-mobile"></div>
+          </li>
+          <li>
+            <a href="#" class="mobile-a">Contact</a>
+            <div class="underline-mobile"></div>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="section__hero">
+        <!-- === slide 1 === -->
+        <div class="hero-container hero1">
+          <div class="img-gallery"></div>
+          <div class="hero-text">
+            <h1>Discover innovative ways to decorate</h1>
+
+            <p class="p__hero">
+              We provide unmatched quality, comfort, and style for property
+              owners across the country. Our experts combine form and function
+              in bringing your vision to life. Create a room in your own style
+              with our collection and make your property a reflection of you and
+              what you love.
+            </p>
+
+            <button type="button" class="shop-btn">
+              Shop now<img src="./images/icon-arrow.svg" alt="arrow" />
+            </button>
+            <div class="switch-btns">
+              <div class="previous-btn prevBtn1"></div>
+              <div class="next-btn nextBtn1"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === slide 2 === -->
+
+        <div class="hero2 hide">
+          <div class="img-gallery img-gallery2"></div>
+          <div class="hero-text">
+            <h1>We are available all across the globe</h1>
+
+            <p class="p__hero">
+              With stores all over the world, it's easy for you to find
+              furniture for your home or place of business. Locally, we’re in
+              most major cities throughout the country. Find the branch nearest
+              you using our store locator. Any questions? Don't hesitate to
+              contact us today.
+            </p>
+
+            <button type="button" class="shop-btn">
+              Shop now<img src="./images/icon-arrow.svg" alt="arrow" />
+            </button>
+            <div class="switch-btns">
+              <div class="previous-btn prevBtn2"></div>
+              <div class="next-btn nextBtn2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === slide 3 === -->
+
+        <div class="hero3 hide">
+          <div class="img-gallery img-gallery3"></div>
+          <div class="hero-text">
+            <h1>Manufactured with the best materials</h1>
+
+            <p class="p__hero">
+              Our modern furniture store provide a high level of quality. Our
+              company has invested in advanced technology to ensure that every
+              product is made as perfect and as consistent as possible. With
+              three decades of experience in this industry, we understand what
+              customers want for their home and office.
+            </p>
+
+            <button type="button" class="shop-btn">
+              Shop now<img src="./images/icon-arrow.svg" alt="arrow" />
+            </button>
+            <div class="switch-btns">
+              <div class="previous-btn prevBtn3"></div>
+              <div class="next-btn nextBtn3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === bottom section === -->
+
+      <section class="section__about">
+        <div class="about-img1"></div>
+        <div class="about-text">
+          <h2>About our furniture</h2>
+          <article>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </article>
+        </div>
+        <div class="about-img2"></div>
+      </section>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by KA.
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
