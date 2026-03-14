@@ -106,45 +106,18 @@ a {
 }
 
 
-.toLeft {
-  transform: translateX(-100vw);
-}
-
-.toLeft200{
-  transform: translateX(-200vw);
-}
-
-.toLeft300{
-  transform: translateX(-300vw);
-} 
-
-.toRight {
-  transform: translateX(0%);
-}
-
-/* .transitionNone{
-  transition: none;
-} */
-
 .slideTransition{
   transition: transform 1s ease-in-out;
+}
+
+.toRight{
+  transform: translateX(40vw);
 }
 
 .hamburger-icon {
   display: none;
 }
 
-/* ul li::after{
-    content: '';
-    width: 20px;
-    height: 1.8px;
-    background: var(--white);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 24px;
-    left: 50%;
-    display: none;
-} */
 
 /* === mobile nav menu === */
 

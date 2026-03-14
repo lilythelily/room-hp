@@ -33,15 +33,17 @@ function removeTransition() {
   hero.classList.remove("slideTransition");
 }
 
+// === transitionend?? ===
+
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
     if (btn.classList.contains("nextBtn4")) {
       removeTransition();
     } else {
       addTransition();
     }
-    updateSlidePosition();
   });
 });
 
@@ -55,4 +57,26 @@ prevBtns.forEach((btn) => {
     }
     updateSlidePosition();
   });
+});
+
+// === keyboard control ===
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+    if (currentSlide == totalSlides - 1) {
+      removeTransition();
+    } else {
+      addTransition();
+    }
+  } else if (e.key === "ArrowLeft") {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+    if (currentSlide == totalSlides - 1) {
+      removeTransition();
+    } else {
+      addTransition();
+    }
+  }
 });
