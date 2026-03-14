@@ -3,9 +3,8 @@
 const desktopList = document.querySelectorAll(".desktop-ul li");
 const prevBtns = document.querySelectorAll(".previous-btn");
 const nextBtns = document.querySelectorAll(".next-btn");
-const hero1 = document.querySelector(".hero1");
-const hero2 = document.querySelector(".hero2");
-const hero3 = document.querySelector(".hero3");
+const hero = document.querySelector(".section__hero");
+const slides = document.querySelectorAll(".hero-container");
 
 // === navigation hover ===
 
@@ -20,18 +19,40 @@ desktopList.forEach((menu) => {
 
 // === gallery display control ===
 
-function imgDisplay(item1, item2, item3) {
-  item1.classList.add("toLeft");
-  item2.classList.remove("hide");
-  item3.classList.add("hero-container");
+let currentSlide = 0;
+const totalSlides = slides.length;
+
+function updateSlidePosition() {
+  hero.style.transform = `translateX(-${currentSlide * 100}vw)`;
 }
+
+function addTransition() {
+  hero.classList.add("slideTransition");
+}
+function removeTransition() {
+  hero.classList.remove("slideTransition");
+}
+
+nextBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    if (btn.classList.contains("nextBtn4")) {
+      removeTransition();
+    } else {
+      addTransition();
+    }
+    updateSlidePosition();
+  });
+});
 
 prevBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
     if (btn.classList.contains("prevBtn1")) {
-      imgDisplay(hero1, hero2, hero2);
-    } else if (btn.classList.contains("prevBtn2")) {
-      imgDisplay(hero2, hero3, hero3);
+      removeTransition();
+    } else {
+      addTransition();
     }
+    updateSlidePosition();
   });
 });

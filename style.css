@@ -21,7 +21,9 @@
   --line-height: 1.4;
   --transiton: all 0.4s ease;
 }
-
+/* html {
+  overflow-x: hidden;
+} */
 body {
   font-family: var(--primary-font);
   font-size: 16px;
@@ -32,11 +34,10 @@ body {
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  overflow-x: hidden;
-
+  overflow-x: clip;
 }
-main{
-    min-height: 100vh;
+main {
+  min-height: 100vh;
 }
 
 .logo {
@@ -46,6 +47,9 @@ main{
 
 header {
   position: absolute;
+  top:0;
+  left:0;
+  z-index: 50;
 }
 
 .desktop-nav {
@@ -101,9 +105,29 @@ a {
   display: none;
 }
 
-.toLeft{
-    transform: translateX(-100%);
-height: 0;
+
+.toLeft {
+  transform: translateX(-100vw);
+}
+
+.toLeft200{
+  transform: translateX(-200vw);
+}
+
+.toLeft300{
+  transform: translateX(-300vw);
+} 
+
+.toRight {
+  transform: translateX(0%);
+}
+
+/* .transitionNone{
+  transition: none;
+} */
+
+.slideTransition{
+  transition: transform 1s ease-in-out;
 }
 
 .hamburger-icon {
@@ -144,7 +168,6 @@ height: 0;
   display: flex;
   align-items: center;
   gap: 32px;
-
 }
 .mobile-ul li {
   list-style: none;
@@ -171,20 +194,27 @@ height: 0;
   padding-bottom: 8px;
 }
 
-.overlay{
-    width: 100vw;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background:hsla(0, 0%, 27%, .7);
+.overlay {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hsla(0, 0%, 27%, 0.7);
 }
 
 /* === hero section === */
+
+.section__hero {
+  display: flex;
+  /* transition: transform 1s ease-in-out; */
+}
 .hero-container {
+  width: 100%;
+  min-width: 100vw;
   display: grid;
   grid-template-columns: 60% 40%;
-  transition: transform 2s ease-in-out;
+  /* transition: transform 1s ease-in-out; */
 }
 
 .img-gallery {
@@ -331,6 +361,7 @@ h2 {
   font-size: 17px;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
   color: var(--black);
 }
 
@@ -347,24 +378,23 @@ footer {
 
 /* === responsive === */
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .hero-container {
     grid-template-columns: 50% 50%;
   }
-
 }
 
-@media (max-width: 880px) {
+@media (max-width: 900px) {
   .hero-container {
     grid-template-columns: 1fr;
     grid-template-rows: 400px auto;
   }
-    .hero-text {
+  .hero-text {
     padding: 80px 64px;
     height: auto;
   }
 
-  h1{
+  h1 {
     font-size: 40px;
   }
   .switch-btns {
@@ -375,7 +405,6 @@ footer {
 
   header {
     width: 100%;
-
   }
   .desktop-ul {
     display: none;
