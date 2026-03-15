@@ -101,6 +101,7 @@ a {
   display: flex;
 }
 
+
 .hide {
   display: none;
 }
@@ -108,10 +109,6 @@ a {
 
 .slideTransition{
   transition: transform 1s ease-in-out;
-}
-
-.toRight{
-  transform: translateX(40vw);
 }
 
 .hamburger-icon {
@@ -180,15 +177,16 @@ a {
 
 .section__hero {
   display: flex;
-  /* transition: transform 1s ease-in-out; */
+    /* transform: translateX(-100%); */
 }
 .hero-container {
   width: 100%;
   min-width: 100vw;
   display: grid;
   grid-template-columns: 60% 40%;
-  /* transition: transform 1s ease-in-out; */
+
 }
+
 
 .img-gallery {
   background: url("./images/desktop-image-hero-1.jpg");
